@@ -76,20 +76,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[0] =true
                 }
-                checkCards()
-
-//                var isFrontFalse = 0
-//                repeat(16) {
-//                    if(!isFront[it-1]) {
-//                        isFrontFalse++
-//                    }
-//                }
-//                if (isFrontFalse>=2) {
-//                    repeat(16) {
-//                        isFront[it-1] = true
-//                    }
-//                }
-
             }
             cv2.setOnClickListener {
                 val front = binding.iv2Front
@@ -111,7 +97,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[1] =true
                 }
-                checkCards()
             }
             cv3.setOnClickListener {
                 val front = binding.iv3Front
@@ -133,7 +118,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[2] =true
                 }
-                checkCards()
             }
             cv4.setOnClickListener {
                 val front = binding.iv4Front
@@ -155,7 +139,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[3] =true
                 }
-                checkCards()
             }
             cv5.setOnClickListener {
                 val front = binding.iv5Front
@@ -177,7 +160,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[4] =true
                 }
-                checkCards()
             }
             cv6.setOnClickListener {
                 val front = binding.iv6Front
@@ -199,7 +181,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[5] =true
                 }
-                checkCards()
             }
             cv7.setOnClickListener {
                 val front = binding.iv7Front
@@ -221,7 +202,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[6] =true
                 }
-                checkCards()
             }
             cv8.setOnClickListener {
                 val front = binding.iv8Front
@@ -243,7 +223,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[7] =true
                 }
-                checkCards()
             }
             cv9.setOnClickListener {
                 val front = binding.iv9Front
@@ -265,7 +244,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[8] =true
                 }
-                checkCards()
             }
             cv10.setOnClickListener {
                 val front = binding.iv10Front
@@ -287,7 +265,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[9] =true
                 }
-                checkCards()
             }
             cv11.setOnClickListener {
                 val front = binding.iv11Front
@@ -309,7 +286,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[10] =true
                 }
-                checkCards()
             }
             cv12.setOnClickListener {
                 val front = binding.iv12Front
@@ -331,7 +307,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[11] =true
                 }
-                checkCards()
             }
             cv13.setOnClickListener {
                 val front = binding.iv13Front
@@ -353,7 +328,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[12] =true
                 }
-                checkCards()
             }
             cv14.setOnClickListener {
                 val front = binding.iv14Front
@@ -375,7 +349,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[13] =true
                 }
-                checkCards()
             }
             cv15.setOnClickListener {
                 val front = binding.iv15Front
@@ -397,7 +370,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[14] =true
                 }
-                checkCards()
             }
             cv16.setOnClickListener {
                 val front = binding.iv16Front
@@ -419,7 +391,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                     front_anim.start()
                     isFront[15] =true
                 }
-                checkCards()
             }
 
         }
@@ -448,12 +419,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
             iv16Back.setImageResource(shuffled[7])
         }
     }
-
-//    private fun flipit (viewToFlip: View) {
-//        val flip = ObjectAnimator.ofFloat(viewToFlip, "rotationY", 0f, 360f)
-//        flip.duration = 1000
-//        flip.start()
-//    }
 
     private fun checkCards() {
 
