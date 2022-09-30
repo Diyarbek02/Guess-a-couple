@@ -16,7 +16,7 @@ import com.diyarbek.guessacouple.R
 import com.diyarbek.guessacouple.data.Images
 import com.diyarbek.guessacouple.databinding.FragmentGameBinding
 
-class GameFragment: Fragment(R.layout.fragment_game) {
+class GameFragment : Fragment(R.layout.fragment_game) {
     private lateinit var binding: FragmentGameBinding
     private lateinit var images: List<Images>
     private lateinit var currentImage: Images
@@ -31,23 +31,6 @@ class GameFragment: Fragment(R.layout.fragment_game) {
         binding = FragmentGameBinding.bind(view)
         super.onViewCreated(view, savedInstanceState)
 
-//        var isFront1 = true
-//        var isFront2 = true
-//        var isFront3 = true
-//        var isFront4 = true
-//        var isFront5 = true
-//        var isFront6 = true
-//        var isFront7 = true
-//        var isFront8 = true
-//        var isFront9 = true
-//        var isFront10 = true
-//        var isFront11 = true
-//        var isFront12 = true
-//        var isFront13 = true
-//        var isFront14 = true
-//        var isFront15 = true
-//        var isFront16 = true
-
         isFront = mutableListOf<Boolean>()
         repeat(16) {
             isFront.add(true)
@@ -61,20 +44,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv1Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[0]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[0]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[0] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[0] =true
+                    isFront[0] = true
                 }
             }
             cv2.setOnClickListener {
@@ -82,20 +65,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv2Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[1]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[1]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[1] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[1] =true
+                    isFront[1] = true
                 }
             }
             cv3.setOnClickListener {
@@ -103,20 +86,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv3Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[2]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[2]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[2] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[2] =true
+                    isFront[2] = true
                 }
             }
             cv4.setOnClickListener {
@@ -124,20 +107,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv4Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[3]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[3]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[3] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[3] =true
+                    isFront[3] = true
                 }
             }
             cv5.setOnClickListener {
@@ -145,20 +128,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv5Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[4]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[4]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[4] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[4] =true
+                    isFront[4] = true
                 }
             }
             cv6.setOnClickListener {
@@ -166,20 +149,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv6Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[5]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[5]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[5] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[5] =true
+                    isFront[5] = true
                 }
             }
             cv7.setOnClickListener {
@@ -187,20 +170,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv7Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[6]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[6]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[6] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[6] =true
+                    isFront[6] = true
                 }
             }
             cv8.setOnClickListener {
@@ -208,20 +191,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv8Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[7]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[7]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[7] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[7] =true
+                    isFront[7] = true
                 }
             }
             cv9.setOnClickListener {
@@ -229,20 +212,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv9Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[8]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[8]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[8] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[8] =true
+                    isFront[8] = true
                 }
             }
             cv10.setOnClickListener {
@@ -250,20 +233,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv10Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[9]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[9]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[9] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[9] =true
+                    isFront[9] = true
                 }
             }
             cv11.setOnClickListener {
@@ -271,20 +254,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv11Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[10]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[10]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[10] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[10] =true
+                    isFront[10] = true
                 }
             }
             cv12.setOnClickListener {
@@ -292,20 +275,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv12Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[11]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[11]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[11] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[11] =true
+                    isFront[11] = true
                 }
             }
             cv13.setOnClickListener {
@@ -313,20 +296,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv13Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[12]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[12]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[12] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[12] =true
+                    isFront[12] = true
                 }
             }
             cv14.setOnClickListener {
@@ -334,20 +317,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv14Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[13]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[13]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[13] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[13] =true
+                    isFront[13] = true
                 }
             }
             cv15.setOnClickListener {
@@ -355,20 +338,20 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv15Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[14]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[14]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[14] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[14] =true
+                    isFront[14] = true
                 }
             }
             cv16.setOnClickListener {
@@ -376,27 +359,27 @@ class GameFragment: Fragment(R.layout.fragment_game) {
                 val back = binding.iv16Back
 
                 front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim = AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[15]){
+                back_anim =
+                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+                if (isFront[15]) {
                     front_anim.setTarget(front)
                     back_anim.setTarget(back)
                     front_anim.start()
                     back_anim.start()
                     isFront[15] = false
-                }
-                else{
+                } else {
                     front_anim.setTarget(back)
                     back_anim.setTarget(front)
                     back_anim.start()
                     front_anim.start()
-                    isFront[15] =true
+                    isFront[15] = true
                 }
             }
 
         }
     }
 
-    private fun setData(){
+    private fun setData() {
         images = Constants.getImages()
         currentImage = images[index]
         var shuffled = currentImage.images.shuffled()
@@ -405,11 +388,11 @@ class GameFragment: Fragment(R.layout.fragment_game) {
             iv2Back.setImageResource(shuffled[0])
             iv3Back.setImageResource(shuffled[1])
             iv4Back.setImageResource(shuffled[1])
-           iv5Back.setImageResource(shuffled[2])
+            iv5Back.setImageResource(shuffled[2])
             iv6Back.setImageResource(shuffled[2])
             iv7Back.setImageResource(shuffled[3])
             iv8Back.setImageResource(shuffled[3])
-           iv9Back.setImageResource(shuffled[4])
+            iv9Back.setImageResource(shuffled[4])
             iv10Back.setImageResource(shuffled[4])
             iv11Back.setImageResource(shuffled[5])
             iv12Back.setImageResource(shuffled[5])
@@ -424,13 +407,13 @@ class GameFragment: Fragment(R.layout.fragment_game) {
 
         var isFrontFalse = 0
         repeat(16) {
-            if(!isFront[it]) {
+            if (!isFront[it]) {
                 isFrontFalse++
             }
         }
-        if (isFrontFalse>=2) {
+        if (isFrontFalse >= 2) {
             repeat(16) {
-                isFront[it ] = true
+                isFront[it] = true
             }
         }
         isFrontFalse = 0
