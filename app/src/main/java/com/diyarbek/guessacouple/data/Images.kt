@@ -1,5 +1,5 @@
 package com.diyarbek.guessacouple.data
 
 data class Images(
-    val images: List<Int>,
+    val images: List<Int>
 )

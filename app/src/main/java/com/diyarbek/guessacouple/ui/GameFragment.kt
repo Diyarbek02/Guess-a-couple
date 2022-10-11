@@ -2,14 +2,11 @@ package com.diyarbek.guessacouple.ui
 
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
-import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
-
+import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.diyarbek.guessacouple.Constants
 import com.diyarbek.guessacouple.R
@@ -22,11 +19,9 @@ class GameFragment : Fragment(R.layout.fragment_game) {
     private lateinit var currentImage: Images
     private var index = 0
     private lateinit var isFront: MutableList<Boolean>
-
     lateinit var front_anim: AnimatorSet
     lateinit var back_anim: AnimatorSet
 
-    @SuppressLint("ResourceType")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentGameBinding.bind(view)
         super.onViewCreated(view, savedInstanceState)
@@ -38,351 +33,62 @@ class GameFragment : Fragment(R.layout.fragment_game) {
 
         setData()
         binding.apply {
+
             cv1.setOnClickListener {
-
-                val front = binding.iv1Front
-                val back = binding.iv1Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[0]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[0] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[0] = true
-                }
+                loadAnimation(iv1Front, iv1Back, 0)
             }
             cv2.setOnClickListener {
-                val front = binding.iv2Front
-                val back = binding.iv2Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[1]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[1] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[1] = true
-                }
+                loadAnimation(iv2Front, iv2Back, 1)
             }
             cv3.setOnClickListener {
-                val front = binding.iv3Front
-                val back = binding.iv3Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[2]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[2] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[2] = true
-                }
+                loadAnimation(iv3Front, iv3Back, 2)
             }
             cv4.setOnClickListener {
-                val front = binding.iv4Front
-                val back = binding.iv4Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[3]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[3] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[3] = true
-                }
+                loadAnimation(iv4Front, iv4Back, 3)
             }
             cv5.setOnClickListener {
-                val front = binding.iv5Front
-                val back = binding.iv5Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[4]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[4] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[4] = true
-                }
+                loadAnimation(iv5Front, iv5Back, 4)
             }
             cv6.setOnClickListener {
-                val front = binding.iv6Front
-                val back = binding.iv6Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[5]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[5] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[5] = true
-                }
+                loadAnimation(iv6Front, iv6Back, 5)
             }
             cv7.setOnClickListener {
-                val front = binding.iv7Front
-                val back = binding.iv7Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[6]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[6] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[6] = true
-                }
+                loadAnimation(iv7Front, iv7Back, 6)
             }
             cv8.setOnClickListener {
-                val front = binding.iv8Front
-                val back = binding.iv8Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[7]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[7] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[7] = true
-                }
+                loadAnimation(iv8Front, iv8Back, 7)
             }
             cv9.setOnClickListener {
-                val front = binding.iv9Front
-                val back = binding.iv9Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[8]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[8] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[8] = true
-                }
+                loadAnimation(iv9Front, iv9Back, 8)
             }
             cv10.setOnClickListener {
-                val front = binding.iv10Front
-                val back = binding.iv10Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[9]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[9] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[9] = true
-                }
+                loadAnimation(iv10Front, iv10Back, 9)
             }
             cv11.setOnClickListener {
-                val front = binding.iv11Front
-                val back = binding.iv11Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[10]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[10] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[10] = true
-                }
+                loadAnimation(iv11Front, iv11Back, 10)
             }
             cv12.setOnClickListener {
-                val front = binding.iv12Front
-                val back = binding.iv12Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[11]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[11] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[11] = true
-                }
+                loadAnimation(iv12Front, iv12Back, 11)
             }
             cv13.setOnClickListener {
-                val front = binding.iv13Front
-                val back = binding.iv13Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[12]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[12] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[12] = true
-                }
+                loadAnimation(iv13Front, iv13Back, 12)
             }
             cv14.setOnClickListener {
-                val front = binding.iv14Front
-                val back = binding.iv14Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[13]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[13] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[13] = true
-                }
+                loadAnimation(iv14Front, iv14Back, 13)
             }
             cv15.setOnClickListener {
-                val front = binding.iv15Front
-                val back = binding.iv15Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[14]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[14] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[14] = true
-                }
+                loadAnimation(iv15Front, iv15Back, 14)
             }
             cv16.setOnClickListener {
-                val front = binding.iv16Front
-                val back = binding.iv16Back
-
-                front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
-                back_anim =
-                    AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
-                if (isFront[15]) {
-                    front_anim.setTarget(front)
-                    back_anim.setTarget(back)
-                    front_anim.start()
-                    back_anim.start()
-                    isFront[15] = false
-                } else {
-                    front_anim.setTarget(back)
-                    back_anim.setTarget(front)
-                    back_anim.start()
-                    front_anim.start()
-                    isFront[15] = true
-                }
+                loadAnimation(iv16Front, iv16Back, 15)
             }
-
         }
     }
 
     private fun setData() {
         images = Constants.getImages()
         currentImage = images[index]
-        var shuffled = currentImage.images.shuffled()
+        val shuffled = currentImage.images.shuffled()
         binding.apply {
             iv1Back.setImageResource(shuffled[0])
             iv2Back.setImageResource(shuffled[0])
@@ -403,20 +109,22 @@ class GameFragment : Fragment(R.layout.fragment_game) {
         }
     }
 
-    private fun checkCards() {
-
-        var isFrontFalse = 0
-        repeat(16) {
-            if (!isFront[it]) {
-                isFrontFalse++
-            }
+    private fun loadAnimation(front: View, back: View, _isFront: Int) {
+        front_anim = AnimatorInflater.loadAnimator(context, R.animator.flip) as AnimatorSet
+        back_anim =
+            AnimatorInflater.loadAnimator(context, R.animator.flip_back) as AnimatorSet
+        if (isFront[_isFront]) {
+            front_anim.setTarget(front)
+            back_anim.setTarget(back)
+            front_anim.start()
+            back_anim.start()
+            isFront[_isFront] = false
+        } else {
+            front_anim.setTarget(back)
+            back_anim.setTarget(front)
+            back_anim.start()
+            front_anim.start()
+            isFront[_isFront] = true
         }
-        if (isFrontFalse >= 2) {
-            repeat(16) {
-                isFront[it] = true
-            }
-        }
-        isFrontFalse = 0
-
     }
 }
